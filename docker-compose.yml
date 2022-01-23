@@ -1,0 +1,19 @@
+version: "3"
+services:
+  react-app:
+    image: react-docker
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - bridge
+  api-server:
+    image: backend-docker
+    ports:
+      - "5000:5000"
+    networks:
+      - bridge
+networks:
+  bridge:
+     driver: bridge
+  
